@@ -19,7 +19,7 @@ def calc_age(uid):
     friends = [year - datetime.datetime.strptime(i.get('bdate'), '%d.%m.%Y').year for i in friends if i.get('bdate') and i.get('bdate').count('.')>1]
     friend_list = sorted(dict(Counter(friends)).items(),key = operator.itemgetter(0))
     friend_list = sorted(friend_list, key=operator.itemgetter(1), reverse= True)
-    return a
+    return friend_list
 if __name__ == '__main__':
     res = calc_age('reigning')
     print(res)
